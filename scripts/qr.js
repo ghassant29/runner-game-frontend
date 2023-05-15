@@ -1,7 +1,7 @@
 socket.on("switch-to-it", () => {
   window.location.href = "game/index.html";
 });
-const qrImg = document.getElementById("qr-img");
-qrImg.addEventListener("click", () => {
+const btn = document.getElementById("btn");
+btn.addEventListener("click", () => {
   window.location.href = "contols/index.html";
 });
