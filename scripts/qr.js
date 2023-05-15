@@ -3,5 +3,5 @@ socket.on("switch-to-it", () => {
 });
 const btn = document.getElementById("btn");
 btn.addEventListener("click", () => {
-  window.location.href = "contols/index.html";
+  window.location.href = "controls/index.html";
 });
