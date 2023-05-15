@@ -1,0 +1,213 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: "<percentage>";
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
+}
+:root {
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgb(0, 0, 0);
+  --c2: rgba(168, 239, 255, 0.1);
+}
+html {
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: #f7f0e6;
+  opacity: 1;
+  background: linear-gradient(135deg, #f7454555 25%, transparent 25%) -40px 0/
+      80px 80px,
+    linear-gradient(225deg, #f74545 25%, transparent 25%) -40px 0/ 80px 80px,
+    linear-gradient(315deg, #f7454555 25%, transparent 25%) 0px 0/ 80px 80px,
+    linear-gradient(45deg, #f74545 25%, #f7f0e6 25%) 0px 0/ 80px 80px;
+}
+.rl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+.btn {
+  text-shadow: 1px 1px pink, -1px -1px maroon;
+  font-family: "Press Start 2P", cursive;
+  line-height: 1.5em;
+  text-align: center;
+  display: inline-block;
+  width: 100px;
+  height: 5em;
+
+  -webkit-border-radius: 0.75em;
+  -moz-border-radius: 0.75em;
+  -o-border-radius: 0.75em;
+  border-radius: 0.75em;
+  background-color: red;
+  -webkit-box-shadow: 0 0.2em maroon;
+  -moz-box-shadow: 0 0.2em maroon;
+  -o-box-shadow: 0 0.2em maroon;
+  box-shadow: 0 0.2em maroon;
+  color: white;
+  margin: 5px;
+  background-color: red;
+  background-image: -o-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+  background-image: -moz-linear-gradient(
+    left top,
+    pink 3%,
+    red 22%,
+    maroon 99%
+  );
+  background-image: -webkit-linear-gradient(
+    left top,
+    pink 3%,
+    red 22%,
+    maroon 99%
+  );
+  background-image: linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+  cursor: pointer;
+  padding-left: 5px;
+}
+.up {
+  position: relative;
+  left: 30%;
+  margin-bottom: 80px;
+}
+.play-btn {
+  margin-top: 20%;
+  margin-left: 15%;
+  width: 300px;
+  height: 100px;
+  font-size: 20px;
+
+  font-weight: bold;
+  /* padding: 10px 0 10px 10px; */
+  background-color: lightgray;
+  text-shadow: -1px -1px black, 1px 1px white;
+  color: black;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 0 0.2em gray;
+  cursor: pointer;
+  animation: zoom-in-zoom-out 1s ease infinite;
+  font-family: "Press Start 2P", cursive;
+}
+h1 {
+  margin: 0;
+}
+.box {
+  font-size: 18px;
+  height: 30px;
+  width: 350px;
+  /* margin: max(1rem, 3vw); */
+  border: 0.35rem solid;
+  padding: 3vw;
+  /* padding-top: 0px; */
+  background-color: white;
+  border-image: conic-gradient(
+      from var(--angle),
+      var(--c2),
+      var(--c1) 0.1turn,
+      var(--c1) 0.15turn,
+      var(--c2) 0.25turn
+    )
+    30;
+  animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.box:nth-child(2) {
+  border-image: radial-gradient(
+      ellipse at var(--gradX) var(--gradY),
+      var(--c1),
+      var(--c1) 10%,
+      var(--c2) 40%
+    )
+    30;
+  animation: borderRadial var(--d) linear infinite forwards;
+}
+@keyframes borderRadial {
+  20% {
+    --gradX: 100%;
+    --gradY: 50%;
+  }
+  40% {
+    --gradX: 100%;
+    --gradY: 100%;
+  }
+  60% {
+    --gradX: 50%;
+    --gradY: 100%;
+  }
+  80% {
+    --gradX: 0%;
+    --gradY: 50%;
+  }
+  100% {
+    --gradX: 50%;
+    --gradY: 0%;
+  }
+}
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
+  }
+}
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+    margin-bottom: 100px;
+  }
+  body {
+    height: 70vh;
+  }
+  .btn {
+    font-size: 20px;
+    width: 110px;
+    height: 3em;
+  }
+  .rl {
+    gap: 20px;
+  }
+  .up {
+    margin-bottom: 30px;
+  }
+  .container {
+    margin-left: 5px;
+  }
+  .play-btn {
+    margin-left: 20%;
+    width: 200px;
+  }
+  .box {
+    height: 50px;
+    width: 300px;
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/qr.css" />
+    <script
+      src="https://cdn.socket.io/3.1.3/socket.io.min.js"
+      integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
+      crossorigin="anonymous"
+    ></script>
+    <title>Scan To Play</title>
+  </head>
+  <body>
+    <div class="QR-img">
+      <img id="img-q" src="images/image-qr-code.png" />
+      <h3>Runner Game<br /></h3>
+      <p class="ins">Scan the QR code to start playing</p>
+    </div>
+    <script src="scripts/server.js"></script>
+    <script src="scripts/qr.js"></script>
+  </body>
+</html>
