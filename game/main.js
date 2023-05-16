@@ -172,7 +172,7 @@ function main() {
       } else {
         displayMessage(`YOU LOSE! YOUR SCORE: ${coins}`);
         socket.emit("gameover-backend");
-        socket.on("gameover", () => {
+        socket.on("game-over", () => {
           window.location.href("../index.html");
         });
       }
