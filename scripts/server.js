@@ -1,4 +1,1 @@
-const socketURL = process.env.GASS_SOCKET_SERVER;
-
-const socket = io(socketURL);
-module.exports = { socket };
+const socket = io("https://runner-backend.onrender.com");
