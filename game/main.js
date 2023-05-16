@@ -171,8 +171,8 @@ function main() {
         displayMessage(`YOU WIN! YOUR SCORE: ${coins}`);
       } else {
         displayMessage(`YOU LOSE! YOUR SCORE: ${coins}`);
+        socket.emit("gameover-backend");
         socket.on("gameover", () => {
-          socket.emit("gameover-backend");
           window.location.href("../index.html");
         });
       }
