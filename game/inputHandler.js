@@ -1,4 +1,5 @@
 console.log("hello");
+
 $(document).keydown((event) => {
   var key = event.which;
 
@@ -13,6 +14,10 @@ $(document).keydown((event) => {
   } else if (key == DOWN) {
     direction[2] = true;
   }
+});
+socket.on("game-over", () => {
+  console.log("done 2354");
+  window.location.href = "../index.html";
 });
 
 socket.on("go-up", () => {
