@@ -1,1 +1,1 @@
-const socket = io("https://l2lhp.localto.net/");
+const socket = io("http://0q3ocfii5yybsk0lhjszlf.webrelay.io/");
