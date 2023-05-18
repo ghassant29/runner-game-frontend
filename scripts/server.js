@@ -1,1 +1,1 @@
-const socket = io("http://0q3ocfii5yybsk0lhjszlf.webrelay.io/");
+const socket = io("https://olive-turtles-thank.loca.lt/");
