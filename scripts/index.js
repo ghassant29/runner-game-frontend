@@ -15,3 +15,7 @@ leftBtn.addEventListener("click", () => {
 upBtn.addEventListener("click", () => {
   socket.emit("up");
 });
+socket.on("game-over", () => {
+  window.location.href =
+    "https://cdn3.whatculture.com/images/2019/09/cb26e1358ff928f7-600x338.jpg";
+});

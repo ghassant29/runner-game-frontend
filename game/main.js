@@ -171,6 +171,9 @@ function main() {
         displayMessage(`YOU WIN! YOUR SCORE: ${coins}`);
       } else {
         displayMessage(`YOU LOSE! YOUR SCORE: ${coins}`);
+        setTimeout(() => {
+          window.location.href = "../index.html";
+        }, 3000);
         socket.emit("gameover");
       }
       return 0;
