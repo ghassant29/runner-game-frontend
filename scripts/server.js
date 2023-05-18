@@ -1,1 +1,1 @@
-const socket = io("https://hp23d.localto.net/");
+const socket = io("https://uop8n.localto.net/");
