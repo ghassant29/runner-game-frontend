@@ -1,1 +1,1 @@
-const socket = io("https://runner-backend-2.onrender.com");
+const socket = io("https://hp23d.localto.net/");
